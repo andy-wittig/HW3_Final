@@ -72,8 +72,9 @@ void infixToPostfix(StackInterface<char>& char_stack, StackInterface<float>& flo
 		else //operator logic
 		{
 			int c_prec = operatorPrecedence(c);
-			int top_prec = operatorPrecedence(char_stack.peek());
-
+			int top_prec;
+			if (!char_stack.isEmpty()) { top_prec = operatorPrecedence(char_stack.peek()); }
+			
 			//check for higher precedence compared to top of stack
 			while (!char_stack.isEmpty() && top_prec >= c_prec)
 			{
