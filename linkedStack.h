@@ -67,5 +67,5 @@ public:
     ~linkedStack() {};
 };
 
-#endif LINKED_STACK
+#endif
 
