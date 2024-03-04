@@ -1,8 +1,11 @@
-main: main.o 
-	g++ main.o -o main
+CC = g++
+CFLAGS = -g -Wall
 
-driver.o: main.cpp linkedStack.h node.h
-	g++ -c main.cpp
+hw_3: main.o
+	$(CC) main.o -o hw_3
+
+driver.o: main.cpp arrayStack.h linkedStack.h node.h
+	$(CC) $(CFLAGS) -c main.cpp
 
 clean:
 	rm *.o driver
